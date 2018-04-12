@@ -1,0 +1,75 @@
+@import 'vars';
+@import 'mixins';
+@import 'reset';
+@import 'utilities';
+@import 'fonts';
+
+// common
+@import 'common/site-header';
+@import 'common/site-nav';
+@import 'common/internal-nav';
+@import 'common/site-footer';
+@import 'common/contact';
+@import 'common/lets-chat';
+
+// home
+@import 'home/hero';
+@import 'home/services';
+@import 'home/process';
+@import 'home/case-studies';
+@import 'home/leadership';
+@import 'home/bios';
+
+// case studies
+@import 'case-studies/intro';
+@import 'case-studies/main';
+@import 'case-studies/article';
+@import 'case-studies/aside';
+@import 'case-studies/services';
+@import 'case-studies/gallery';
+@import 'case-studies/pull-quote';
+@import 'case-studies/touts';
+
+html,
+body {
+  height: 100%;
+  font-family: serif;
+  -webkit-font-smoothing: antialiased;
+  color: $darkText;
+  background-color: $bg;
+  font-family: $regular;
+}
+
+#netlify-identity-widget {
+  z-index: 9999;
+}
+
+// Site container on mobile will slide left to reveal main nav on right
+@media (max-width: $mobileNav) {
+  .site-container {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    left: 0;
+  }
+    .site-container__mask {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      // background-color: #fff;
+      opacity: 0.75;
+      z-index: 150;
+      display: none;
+    }
+
+  body.has-open-nav {
+    .site-container {
+      left: -160px;
+      .site-container__mask {
+        display: block;
+      }
+    }
+  }
+}

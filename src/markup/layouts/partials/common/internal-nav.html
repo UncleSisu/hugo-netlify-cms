@@ -1,0 +1,24 @@
+<nav class="internal-nav">
+  <div class="internal-nav__container">
+    <a class="internal-nav__logo" href="{{ "index.html" | relURL }}">
+      {{ partial "svgs/logo-simple.svg" (dict "class" "internal-nav__logo-icon")}}
+    </a>
+    <ul class="internal-nav__list internal-nav__list--left">
+        <li class="internal-nav__item">
+          <a class="internal-nav__link" href="{{ "index.html#services" | relURL }}">Services{{ partial "svgs/chevron-right.svg" (dict "class" "internal-nav__icon")}}</a>
+        </li>
+        <li class="internal-nav__item">
+          <a class="internal-nav__link" href="{{ "index.html#process" | relURL }}">Process{{ partial "svgs/chevron-right.svg" (dict "class" "internal-nav__icon")}}</a>
+        </li>
+        <li class="internal-nav__item">
+          <a class="internal-nav__link" href="{{ "index.html#case-studies" | relURL }}">Case Studies{{ partial "svgs/chevron-right.svg" (dict "class" "internal-nav__icon")}}</a>
+        </li>
+        <li class="internal-nav__item">
+          <a class="internal-nav__link" href="{{ "index.html#leadership" | relURL }}">Leadership{{ partial "svgs/chevron-right.svg" (dict "class" "internal-nav__icon")}}</a>
+        </li>
+        <li class="internal-nav__item">
+          <a class="internal-nav__link" href="{{ "index.html#contact" | relURL }}">Contact Us{{ partial "svgs/chevron-right.svg" (dict "class" "internal-nav__icon")}}</a>
+        </li>
+    </ul>
+  </div>
+</nav>

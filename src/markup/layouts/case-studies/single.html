@@ -1,0 +1,22 @@
+{{ partial "common/start-page" . }}
+{{ partial "common/internal-nav" . }}
+<div class="site-container">
+  {{ partial "common/site-header" . }}
+  {{ partial "case-studies/intro" . }}
+  <div class="cs-main">
+    <div class="cs-main__container">
+      {{ partial "case-studies/article" . }}
+      <aside class="cs-aside">
+        {{ partial "case-studies/services" . }}
+      </aside>
+    </div>
+  </div>
+  {{ partial "case-studies/touts" . }}
+  {{ partial "case-studies/gallery" . }}
+  {{ partial "case-studies/pull-quote" . }}
+  {{ partial "common/lets-chat" . }}
+  {{ partial "common/contact" . }}
+  {{ partial "common/site-footer" . }}
+  <div class="site-container__mask"></div>
+</div>
+{{ partial "common/end-page" . }}

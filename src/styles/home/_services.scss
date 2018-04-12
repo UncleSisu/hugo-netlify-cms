@@ -1,0 +1,163 @@
+.services {
+
+}
+  .services__container {
+    @include container;
+    padding-top: 144px;
+  }
+    // intro
+    // ----------------------------------------- //
+    .services__title {
+      @include section-title;
+    }
+    .services__details {
+      @include section-details;
+    }
+
+    // list
+    // ----------------------------------------- //
+    .services__list {
+      display: flex;
+      margin-left: -7px;
+      margin-right: -7px;
+    }
+      .services__list-item {
+        display: flex;
+        flex: 1 1;
+        padding: 0 7px;
+        position: relative;
+      }
+        .service {
+          padding: 88px 0 20px;
+          min-height: 370px;
+          text-align: center;
+          position: relative;
+          background-color: #fff;
+        }
+          .service__icon-wrapper {
+            margin-bottom: 26px;
+          }
+            .service__icon {
+              fill: $red;
+            }
+            .service__icon--handshake {
+              width: 105px;
+              height: 70px;
+            }
+            .service__icon--shovels {
+              width: 70px;
+              height: 70px;
+            }
+            .service__icon--building {
+              width: 70px;
+              height: 70px;
+            }
+          .service__title {
+            font-size: 24px;
+            text-transform: uppercase;
+            font-family: $bold;
+            margin-bottom: 20px;
+            letter-spacing: 0.04em;
+          }
+          .service__details {
+            font-size: 20px;
+            line-height: 1.4;
+            letter-spacing: 0.05em;
+            margin: 0 50px;
+          }
+
+// make columns a vertical column
+// ----------------------------------------- //
+@media (max-width: 870px) {
+  // list
+  // ----------------------------------------- //
+  .services__list {
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+    .services__list-item {
+      width: 100%;
+      margin-bottom: 14px;
+      max-width: 400px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+      .service {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 40px 20px;
+        min-height: 175px;
+        width: 100%;
+      }
+}
+
+
+// mobile styles
+// ----------------------------------------- //
+@media (max-width: $mobileNav) {
+  .services {
+    padding-bottom: 0;
+  }
+    .services__container {
+      @include container--sml;
+      padding-top: 44px;
+    }
+      // intro
+      // ----------------------------------------- //
+      .services__title {
+        @include section-title--sml;
+      }
+      .services__details {
+        @include section-details--sml;
+      }
+
+      // list
+      // ----------------------------------------- //
+      .services__list {
+        // flex-direction: column;
+        // margin-left: 20px;
+        // margin-right: 20px;
+      }
+        .services__list-item {
+          // margin-bottom: 14px;
+        }
+          .service {
+            // display: flex;
+            // flex-direction: column;
+            // justify-content: center;
+            // padding: 15px 20px;
+            // min-height: 175px;
+            padding-top: 15px;
+            padding-bottom: 15px;
+          }
+            .service__icon-wrapper {
+              margin-bottom: 10px;
+            }
+              .service__icon {
+
+              }
+              .service__icon--handshake {
+                width: 52.5;
+                height: 35px;
+              }
+              .service__icon--shovels {
+                width: 35px;
+                height: 35px;
+              }
+              .service__icon--building {
+                width: 35px;
+                height: 35px;
+              }
+            .service__title {
+              font-size: 17px;
+              margin-bottom: 8px;
+              letter-spacing: 0.05em;
+            }
+            .service__details {
+              font-size: 14px;
+              line-height: 1.6;
+              margin: 0;
+            }
+}

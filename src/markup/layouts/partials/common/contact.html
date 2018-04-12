@@ -1,0 +1,34 @@
+<section id="contact" class="contact js-site-section">
+  <div class="contact__container">
+    <div class="contact__img"></div>
+    <div class="contact__block">
+      <p class="contact__detail">
+        <a href="tel:{{ urlize .Site.Params.contact.phone }}" class="contact__link">
+          <span class="contact__icon-wrapper">
+            {{ partial "svgs/phone.svg" (dict "class" "contact__icon contact__icon--phone")}}
+          </span>
+          <span class="contact__text">{{ .Site.Params.contact.phone }}</span>
+        </a>
+      </p>
+      <p class="contact__detail">
+        <a href="mailto:{{ .Site.Params.contact.email }}" class="contact__link">
+          <span class="contact__icon-wrapper">
+            {{ partial "svgs/email.svg" (dict "class" "contact__icon contact__icon--email")}}
+          </span>
+          <span class="contact__text">{{ .Site.Params.contact.email }}</span>
+        </a>
+      </p>
+      <p class="contact__detail">
+        <a href="{{ .Site.Params.contact.directions_link }}" targer="_blank" class="contact__link">
+          <span class="contact__icon-wrapper">
+            {{ partial "svgs/map-marker.svg" (dict "class" "contact__icon contact__icon--map-marker")}}
+          </span>
+          <span class="contact__text">
+            {{ .Site.Params.contact.address | markdownify }}
+            <br><strong>Get Directions {{ partial "svgs/chevron-right.svg" (dict "class" "contact__arrow")}}</strong>
+          </span>
+        </a>
+      </p>
+    </div>
+  </div>
+</section>

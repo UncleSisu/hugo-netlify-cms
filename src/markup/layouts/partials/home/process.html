@@ -1,0 +1,44 @@
+<section id="process" class="process js-site-section">
+  <div class="process__container">
+    <h1 class="process__title">{{ .Params.process.title }}</h1>
+    <p class="process__details">{{ .Params.process.details }}</p>
+    <div class="slider">
+      <div class="slider__container">
+        <div class="slider__slides-mask">
+          <div class="slider__slides-container">
+            {{ range $index, $slide := .Params.process.step }}
+              <div class="slider__slide slide">
+                <picture class="slide__img">
+                  <source srcset="{{ .img_sml }}" media="(max-width: 550px)">
+                  <source srcset="{{ .img_lrg }}">
+                  <img srcset="{{ .img_lrg }}" alt="">
+                </picture>
+                <div class="slide__copy">
+                  <h2 class="slide__title"><span class="slide__number">{{ add $index 1 }}</span> {{ .title }}</h2>
+                  <p class="slide__details">{{ .details }}</p>
+                </div>
+              </div>
+            {{ end }}
+          </div>
+        </div>
+        <button class="slider__next-btn js-next-btn">
+          <span class="slider__next-copy--lrg">Next Step</span>
+          <span class="slider__next-copy--sml">Next: Step <span class="slider__next-number">2</span></span>
+          {{ partial "svgs/chevron-right.svg" (dict "class" "slider__next-arrow")}}
+        </button>
+        <button class="slider__next-btn slider__next-btn--last js-last-btn">Back to Step 1</button>
+      </div>
+      <ul class="slider__pagination">
+        {{ range $index, $slide := .Params.process.step }}
+          <li class="slider__page">
+            <button
+              class="
+                slider__page-btn
+                {{ if eq $index 0}} is-current {{ end }}
+              ">{{ add $index 1 }}</button>
+          </li>
+        {{ end }}
+      </ul>
+    </div>
+  </div>
+</section>

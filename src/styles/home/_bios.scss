@@ -1,0 +1,202 @@
+.bios {
+  position: relative;
+  background-color: #fff;
+  display: none;
+}
+.bios.is-open {
+  display: block;
+}
+.bios__container {
+  @include container;
+  padding-top: 156px;
+  padding-bottom: 70px;
+  display: flex;
+}
+// nav
+// ----------------------------------------- //
+.bios__nav {
+  flex: 0 0 218px;
+}
+.bios__nav-item {
+  margin-bottom: 20px;
+}
+.bios__nav-link {
+  font-size: 20px;
+  font-family: $bold;
+  color: $darkText;
+  transition: color 0.2s ease;
+  &:hover {
+    color: $darkRed;
+  }
+  &.is-current {
+    color: $red;
+  }
+}
+// close btn
+// ----------------------------------------- //
+.bios__close-btn {
+  position: absolute;
+  top: 156px;
+  right: 60px;
+  transition: all 0.3s ease;
+}
+.bios__close-icon {
+  width: 25px;
+  height: 25px;
+  fill: $darkGray;
+  transition: all 0.3s ease;
+}
+// hover
+.bios__close-btn:hover {
+  transform: scale(1.1);
+  .bios__close-icon {
+    fill: $darkRed;
+  }
+}
+// bio
+// ----------------------------------------- //
+.bios__bio {
+  flex: 1 1;
+}
+.bio {
+  display: none;
+}
+.bio.is-current {
+  display: flex;
+}
+// image
+// ----------------------------------------- //
+.bio__img-container {
+  flex: 1 1 31.5%;
+}
+.bio__img-wrapper {
+  border-radius: 50%;
+  overflow: hidden;
+  font-size: 0;
+  line-height: 0;
+}
+.bio__img {
+  width: 100%;
+}
+// copy
+// ----------------------------------------- //
+.bio__copy-container {
+  flex: 1 1 68.5%;
+  padding: 0 25px 0 7.4%;
+}
+.bio__title {
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+  font-family: $bold;
+}
+.bio__role {
+  font-size: 23px;
+  margin-bottom: 26px;
+  letter-spacing: 0.03em;
+}
+.bio__details {
+  font-size: 20px;
+  line-height: 1.6;
+  p {
+    margin-bottom: 32px;
+  }
+}
+.bio__email {
+  margin-top: 32px;
+}
+.bio__email-link {
+  color: $darkText;
+  font-family: $bold;
+  font-size: 15px;
+  color: $red;
+  transition: color 0.2s ease;
+  &:hover {
+    color: $darkRed;
+  }
+}
+.bio__email-icon {
+  width: 26px;
+  height: 16px;
+  fill: $red;
+  margin-right: 9px;
+  position: relative;
+  top: 3px;
+}
+
+// mobile styles
+// single column
+// ----------------------------------------- //
+@media (max-width: $mobileNav) {
+  .bios {
+
+  }
+  .bios__container {
+    @include container--sml;
+    padding-top: 41px;
+  }
+  .bio.is-current {
+    display: block;
+  }
+  // close btn
+  // ----------------------------------------- //
+  .bios__close-btn {
+    right: 20px;
+    top: 25px;
+  }
+  .bios__close-icon {
+    width: 12px;
+    height: 12px;
+  }
+  // image
+  // ----------------------------------------- //
+  .bio__img-container {
+
+  }
+  .bio__img-wrapper {
+    width: 41.5%;
+    max-width: 250px;
+    margin-bottom: 16px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  // copy
+  // ----------------------------------------- //
+  .bio__copy-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .bio__title {
+    font-size: 16px;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .bio__role {
+    font-size: 15px;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .bio__details {
+    font-size: 15px;
+    line-height: 1.5;
+    p {
+      margin-bottom: 22px;
+    }
+  }
+}
+
+// hide side nav
+// ----------------------------------------- //
+@media (max-width: 630px) {
+  // nav
+  // ----------------------------------------- //
+  .bios__nav {
+    display: none;
+  }
+  // image
+  // ----------------------------------------- //
+  .bio__img-wrapper {
+    width: 53.5%;
+  }
+}

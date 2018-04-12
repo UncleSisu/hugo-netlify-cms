@@ -1,0 +1,284 @@
+.case-studies {
+  margin-bottom: 10px;
+}
+  .case-studies__container {
+    @include container;
+    padding-top: 144px;
+  }
+    // Intro
+    // ----------------------------------------- //
+    .case-studies__title {
+      @include section-title;
+    }
+    .case-studies__details {
+      @include section-details;
+    }
+
+    // Grid
+    // ----------------------------------------- //
+    .grid {
+      text-align: center;
+    }
+      .grid__content {
+        margin-left: -9px;
+        margin-right: -9px;
+        margin-bottom: 23px;
+      }
+        // grid item
+        // ----------------------------------------- //
+        .grid__sizer {
+          width: 50%;
+          line-height: 0;
+          font-size: 0;
+          height: 0;
+          overflow: hidden;
+        }
+        .grid-item {
+          position: relative;
+          float: left;
+          width: 50%;
+          padding-top: 30.354%;
+        }
+        .grid-item.is-hidden {
+          display: none;
+        }
+        .grid.is-showing-all .is-hidden {
+          display: block;
+        }
+
+        .grid-item--vertical {
+          padding-top: 60.708%;
+        }
+          .grid-item__link {
+            position: absolute;
+            top: 9px;
+            right: 9px;
+            bottom: 9px;
+            left: 9px;
+            overflow: hidden;
+            &:before {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 100%;
+              height: 25vh;
+              background: linear-gradient(0deg, rgba(35,34,33,1) 0%, rgba(35,34,33,0) 100%);
+              z-index: 2;
+              opacity: 0.7;
+              transition: opacity 0.25s $easeInOutCubic,
+                          height 0.25s $easeInOutCubic;
+            }
+          }
+
+          .grid-item:hover .grid-item__link {
+            &:before {
+              height: 40vh;
+              opacity: 1;
+            }
+          }
+            // copy
+            // ----------------------------------------- //
+            .grid-item__copy {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              color: #fff;
+              z-index: 5;
+              text-align: left;
+              padding: 42px 50px;
+            }
+              .grid-item__title {
+                font-size: 28px;
+                text-transform: uppercase;
+                font-family: $bold;
+                line-height: 1.2;
+              }
+                .grid-item__title-arrow {
+                  display: none;
+                  fill: #fff;
+                  width: 9px;
+                  height: 13px;
+                  margin-left: 3px;
+                  position: relative;
+                  top: -1px;
+                }
+              .grid-item__detail-mask {
+                height: 0;
+                overflow: hidden;
+                opacity: 0;
+              }
+                .grid-item__detail-content {
+
+                }
+                  .grid-item__details {
+                    font-size: 20px;
+                    line-height: 1.6;
+                    margin-bottom: 20px;
+                  }
+                  .grid-item__cta {
+                    font-family: $bold;
+                    font-size: 12px;
+                    transition: all 0.2s ease;
+                  }
+                    .grid-item__cta-arrow {
+                      fill: $red;
+                      margin-left: 7px;
+                      width: 6px;
+                      height: 9px;
+                      position: relative;
+                      top: 1px;
+                      transition: all 0.2s ease;
+                    }
+                  .grid-item__cta:hover {
+                    color: $darkRed;
+                    .grid-item__cta-arrow {
+                      transform: translateX(3px);
+                      fill: $darkRed;
+                    }
+                  }
+            // img
+            // ----------------------------------------- //
+            .grid-item__img {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              z-index: 1;
+            }
+            .grid-item--vertical .grid-item__img {
+              left: 50%;
+              width: auto;
+              height: 100%;
+              transform: translateX(-50%);
+            }
+        // cta
+        // ----------------------------------------- //
+        .grid__cta {
+          text-align: center;
+          display: none;
+        }
+          .grid__cta-text {
+            display: block;
+            font-size: 12px;
+            font-family: $bold;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            transition: all 0.2s ease;
+          }
+          .grid__cta-arrow {
+            fill: $red;
+            width: 13px;
+            height: 8px;
+            transition: all 0.2s ease;
+          }
+        .grid__cta:hover {
+          .grid__cta-text {
+            color: $darkRed;
+          }
+          .grid__cta-arrow {
+            fill: $darkRed;
+            transform: translateY(5px);
+          }
+        }
+
+
+// make copy smaller while maintaining grid
+// ----------------------------------------- //
+@media (max-width: 1090px) {
+  // copy
+  // ----------------------------------------- //
+  .grid-item__copy {
+    padding: 20px 25px;
+  }
+    .grid-item__title {
+      font-size: 23px;
+    }
+      .grid-item__detail-content {
+
+      }
+        .grid-item__details {
+          font-size: 15px;
+        }
+}
+
+// Hide description and only use titles
+// ----------------------------------------- //
+@media (max-width: 800px) {
+  .grid-item__title-arrow {
+    display: inline-block;
+  }
+  .grid-item:hover .grid-item__link {
+    &:before {
+      height: 25vh;
+      opacity: 0.7;
+    }
+  }
+}
+
+// make titles smaller
+// ----------------------------------------- //
+@media (max-width: 700px) {
+  .grid-item__title {
+    font-size: 12px;
+  }
+  .grid-item__title-arrow {
+    width: 4px;
+    height: 6px;
+  }
+}
+
+// make single column
+// ----------------------------------------- //
+@media (max-width: 600px) {
+  .grid-item__copy {
+    padding: 13px 16px;
+  }
+  .grid-item {
+    width: 100%;
+    padding-top: 60.708%;
+  }
+  .grid-item--vertical {
+    padding-top: 60.708%;
+  }
+  .grid-item--vertical .grid-item__img {
+    left: 0;
+    height: auto;
+    width: 100%;
+    transform: translateX(0);
+  }
+
+  .grid-item__link,
+  .grid-item__link:hover {
+    &:before {
+      height: 50%;
+    }
+  }
+  .grid-item:hover .grid-item__link {
+    &:before {
+      height: 50%;
+      opacity: 0.7;
+    }
+  }
+}
+
+// mobile styles
+// ----------------------------------------- //
+@media (max-width: $mobileNav) {
+  .case-studies {
+    margin-bottom: 0;
+  }
+    .case-studies__container {
+      @include container--sml;
+      padding-top: 44px;
+    }
+      // Intro
+      // ----------------------------------------- //
+      .case-studies__title {
+        @include section-title--sml;
+      }
+      .case-studies__details {
+        @include section-details--sml;
+      }
+}

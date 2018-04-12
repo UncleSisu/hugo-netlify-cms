@@ -1,0 +1,33 @@
+<section class="bios">
+  <div class="bios__container">
+    <ul class="bios__nav">
+      {{ range .Params.leadership.leader }}
+        <li class="bios__nav-item">
+          <a href="#{{ urlize .name }}" class="bios__nav-link">{{ .name }}</a>
+        </li>
+      {{ end }}
+    </ul>
+    <button class="bios__close-btn">
+      {{ partial "svgs/close.svg" (dict "class" "bios__close-icon")}}
+    </button>
+    {{ range .Params.leadership.leader }}
+      <div id="{{ urlize .name }}" class="bios__bio bio">
+        <div class="bio__img-container">
+          {{ with .image }}
+          <div class="bio__img-wrapper">
+            <img src="{{ . }}" alt="" class="bio__img">
+          </div>
+          {{ end }}
+        </div>
+        <div class="bio__copy-container">
+          <h2 class="bio__title">{{ .name }}</h2>
+          <p class="bio__role">{{ .role }}</p>
+          <div class="bio__details">
+            {{ .bio | markdownify }}
+          </div>
+          <p class="bio__email"><a href="mailto:{{ .email }}" class="bio__email-link">{{ partial "svgs/email.svg" (dict "class" "bio__email-icon")}} {{ .email }}</a></p>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</section>

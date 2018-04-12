@@ -1,0 +1,160 @@
+# NETLIFY CMS CONFIG
+
+# Backend
+#----------------------------------------------------#
+backend:
+  name: github
+  repo: stevenwaller/netlify # Path to your Github repository
+  branch: master # Branch to update (master by default)
+  site_domain: http://localhost:3001 # Sets the site_id query param sent to the API endpoint
+  base_url: http://localhost:3000 # OAuth client URL
+
+# Editorial Workflow
+#----------------------------------------------------#
+# Enable to add an interface for drafting, reviewing, and approving
+# publish_mode: editorial_workflow
+
+# Media and Public Folders
+#----------------------------------------------------#
+# Folder where user uploaded files will be saved in the repo
+media_folder: "src/images/uploads"
+
+# Folder where upload files can be found on public site
+# Used in image src attributes and is relative to the file where it’s called
+# For this reason, we usually start the path at the site root, using the opening /.
+# If public_folder is not set, Netlify CMS will default to the same value as media_folder, adding an opening / if one is not included.
+public_folder: "/images/uploads"
+
+# Collections
+#----------------------------------------------------#
+# Define the structure for the different content types the CMS should be able to edit
+# name: Used in routes, e.g., /admin/collections/:slug/edit
+# label: Used in the UI, e.g., "New Post"
+# folder: The path to the folder where the documents are stored
+# create: Allow users to create new documents in this collection
+# fields: Fields shown in the content editor, then saved as front matter at the beginning of the document
+#   label: Field label in the editor UI
+#   name: Field name in the document front matter
+#   widget: Determines UI style and value data type
+#   default (optional) Sets a default value for the field
+#   tagname: (optional) The HTML tag for the content preview window
+collections:
+  - label: "Pages"
+    name: "pages"
+    files:
+      - file: "config.yaml"
+        label: "Site-wide"
+        name: "config"
+        fields:
+          - {label: "Site Title", name: "title", widget: "string"}
+          - label: "Parameters"
+            name: "params"
+            widget: "object"
+            fields:
+              - {label: "Copyright", name: "copyright", widget: "string"}
+              - label: Contact
+                name: contact
+                widget: "object"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Call to Action", name: "call_to_action", widget: "string"}
+                  - {label: "Phone", name: "phone", widget: "string"}
+                  - {label: "Email", name: "email", widget: "string"}
+                  - {label: "Address", name: "address", widget: "text"}
+                  - {label: "Directions Link", name: "directions_link", widget: "string"}
+      - file: "src/markup/content/_index.md"
+        label: "Home Page"
+        name: "index"
+        fields:
+          - label: "Intro Marquee (The big image and copy at the top of the page)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - {label: "Desktop Image (1366 x 800)", name: "image_lrg", widget: "image"}
+              - {label: "Mobile Image (1210 x 758)", name: "image_sml", widget: "image"}
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Details", name: "details", widget: "text"}
+          - label: "Services"
+            name: "services"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Details", name: "details", widget: "text"}
+              - label: "Service"
+                name: "services"
+                widget: "list"
+                fields:
+                  - {label: "Icon", name: "icon", widget: "select", options: ["handshake", "shovels", "building"]}
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Details", name: "details", widget: "text"}
+          - label: "Process (slideshow)"
+            name: "process"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Details", name: "details", widget: "text"}
+              - label: "Step"
+                name: "step"
+                widget: "list"
+                fields:
+                  - {label: "Title", name: "title", widget: "string"}
+                  - {label: "Details", name: "details", widget: "text"}
+                  - {label: "Large Image (1167 x 480)", name: "img_lrg", widget: "image"}
+                  - {label: "Small Image (560 x 375)", name: "img_sml", widget: "image"}
+          - label: "Case Studies"
+            name: "case_studies"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - {label: "Details", name: "details", widget: "text"}
+          - label: "Leadership"
+            name: "leadership"
+            widget: "object"
+            fields:
+              - {label: "Title", name: "title", widget: "string"}
+              - label: "Leader"
+                name: "leader"
+                widget: "list"
+                fields:
+                  - {label: "Name", name: "name", widget: "string"}
+                  - {label: "Role", name: "role", widget: "string"}
+                  - {label: "Image (300 x 300)", name: "image", widget: "image"}
+                  - {label: "Eamil", name: "email", widget: "string"}
+                  - {label: "Bio", name: "bio", widget: "text"}
+  - name: "case-studies"
+    label: "Case Study"
+    folder: "src/markup/content/case-studies"
+    create: true
+    fields:
+      - {label: "Case Study Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Publish Date (Most recent show up on top on the home page)", name: "date", widget: "datetime"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Call To Action (Used on home page when hovering)", name: "call_to_action", widget: "string"}
+      - {label: "Featured Image (1366 x 813) (Used on home page and top of Case Study)", name: "featured_image", widget: "image"}
+      - {label: "Grid Layout (How the Case Study should look in the home page grid)", name: "grid_layout", widget: "select", options: ["horizontal", "vertical"]}
+      - label: "Services"
+        name: "services"
+        widget: "list"
+        fields:
+          - {label: "Service", name: "service", widget: "string"}
+      - label: "Touts"
+        name: "touts"
+        widget: "list"
+        fields:
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Image (640 x 337)", name: "image", widget: "image"}
+          - {label: "Details", name: "details", widget: "text"}
+      - label: "Quote"
+        name: "quote"
+        widget: "object"
+        fields:
+          - {label: "Text", name: "text", widget: "markdown"}
+          - {label: "Source's Name", name: "source_name", widget: "string"}
+          - {label: "Source's Title", name: "source_title", widget: "string"}
+      - {label: "Body (The main content of the Case Study)", name: "body", widget: "markdown"}
+      - label: "Gallery"
+        name: "gallery"
+        widget: "list"
+        fields:
+          - {label: "Image (1438 x 899)", name: "image", widget: "image"}
+          - {label: "Description (optional)", name: "description", widget: "string"}

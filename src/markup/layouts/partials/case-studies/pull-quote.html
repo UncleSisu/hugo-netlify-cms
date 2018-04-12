@@ -1,0 +1,19 @@
+<section class="pull-quote">
+  <div class="pull-quote__container">
+    <blockquote class="pull-quote__block">
+        {{ with .Params.quote.text }}
+          <p>“{{ . | safeHTML}}”</p>
+        {{ end }}
+        <footer>
+          <cite>
+            {{ with .Params.quote.source_name }}
+              <h2 class="pull-quote__source">-{{ . }}</h2>
+            {{ end }}
+            {{ with .Params.quote.source_title }}
+              <p class="pull-quote__source-title">{{ . }}</p>
+            {{ end }}
+          </cite>
+        </footer>
+    </blockquote>
+  </div>
+</section>

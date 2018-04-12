@@ -1,0 +1,38 @@
+@mixin container {
+  max-width: 1287px;
+  padding-right: 60px;
+  padding-left: 60px;
+  margin: 0 auto;
+}
+
+@mixin container--sml {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+@mixin section-title {
+  font-size: 54px;
+  text-transform: uppercase;
+  font-family: $bold;
+  text-align: center;
+  letter-spacing: 0.03em;
+  margin-bottom: 15px;
+}
+
+@mixin section-title--sml {
+  font-size: 24px;
+  margin-bottom: 11px;
+}
+
+@mixin section-details {
+  font-size: 20px;
+  line-height: 1.4;
+  letter-spacing: 0.005em;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+@mixin section-details--sml {
+  font-size: 16px;
+  margin-bottom: 20px;
+}

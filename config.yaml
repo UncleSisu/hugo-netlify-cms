@@ -1,0 +1,47 @@
+# HUGO CONFIG
+# https://gohugo.io/overview/configuration/
+
+title: "Red Hook Capital Partners"
+baseurl: "/"
+languageCode: "en-us"
+
+# Directory locations
+#----------------------------------------------------#
+publishDir: "dist"
+archetypeDir: "src/markup/archetypes"
+contentDir: "src/markup/content"
+dataDir: "src/markup/data"
+layoutDir: "src/markup/layouts"
+themesDir: "src/markup/themes"
+
+# Use YAML for front matter
+#----------------------------------------------------#
+metaDataFormat: "yaml"
+
+# Taxonomies
+#----------------------------------------------------#
+# Removing default Category and Tags
+taxonomies:
+  - null
+
+# Markdown settings
+#----------------------------------------------------#
+blackfriday:
+ extensions:
+  - "hardLineBreak" # support hard line breaks in multi line strings
+
+# Global Site Variables
+#----------------------------------------------------#
+params:
+  copyright: "©2017 Red Hook Capital Partners"
+  contact:
+    title: "Contact"
+    call_to_action: "Tell us about your project"
+    phone: "(424) 217-1341"
+    email: "info@redhookcap.com"
+    address: |
+      Red Hook Capital Partners
+      2120 E. Grand Ave
+      Suite #135
+      El Segundo, CA 90245
+    directions_link: "https://goo.gl/maps/q8R8pspZV5D2"

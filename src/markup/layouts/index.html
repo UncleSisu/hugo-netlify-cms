@@ -1,0 +1,19 @@
+{{ partial "common/start-page" . }}
+{{ partial "common/site-nav" . }}
+<div class="site-container">
+  {{ partial "common/site-header" . }}
+  <div class="home-page">
+      {{ partial "home/hero" . }}
+      {{ partial "home/services" . }}
+      {{ partial "home/process" . }}
+      {{ partial "home/case-studies" . }}
+      <div id="leadership" class="leadership-and-bios js-site-section">
+        {{ partial "home/leadership" . }}
+        {{ partial "home/bios" . }}
+      </div>
+      {{ partial "common/contact" . }}
+  </div>
+  {{ partial "common/site-footer" . }}
+  <div class="site-container__mask"></div>
+</div>
+{{ partial "common/end-page" . }}

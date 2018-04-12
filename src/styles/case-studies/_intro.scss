@@ -1,0 +1,128 @@
+.cs-intro {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  &:before,
+  &:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    left: 0;
+    z-index: 10;
+  }
+  &:before {
+    height: 206px;
+    background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 9%, rgba(0,0,0,0.5) 100%);
+    top: 0;
+  }
+  &:after {
+    height: 507px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 98%, rgba(0,0,0,0) 100%);
+    bottom: 0;
+  }
+}
+.cs-intro__container {
+  @include container;
+  position: relative;
+  height: 798px;
+}
+// close link
+// ----------------------------------------- //
+.cs-intro__close-link {
+  position: absolute;
+  top: 201px;
+  right: 56px;
+  z-index: 30;
+  transition: all 0.3s ease;
+}
+.cs-intro__close-icon {
+  width: 40px;
+  height: 40px;
+  fill: #fff;
+  transition: all 0.3s ease;
+}
+// hover
+.cs-intro__close-link:hover {
+  transform: scale(1.1);
+  .cs-intro__close-icon {
+    fill: $darkRed;
+  }
+}
+// copy
+// ----------------------------------------- //
+.cs-intro__copy {
+  position: absolute;
+  bottom: 89px;
+  left: 56px;
+  color: #fff;
+  z-index: 20;
+}
+.cs-intro__title {
+  font-size: 28px;
+  font-family: $medium;
+  margin-bottom: 18px;
+}
+.cs-intro__sub-title {
+  font-family: $bold;
+  font-size: 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.038em;
+  line-height: 1.13;
+  max-width: 1000px;
+}
+.cs-intro__img-wrapper {
+
+}
+.cs-intro__img {
+
+}
+
+@media (max-width: $mobileNav) {
+  .cs-intro {
+    margin-top: 48px;
+    &:before {
+      display: none;
+    }
+    &:after {
+      height: 430px;
+    }
+  }
+  .cs-intro__container {
+    @include container--sml;
+    height: 380px;
+  }
+  // close link
+  // ----------------------------------------- //
+  .cs-intro__close-link {
+    top: 25px;
+    right: 21px;
+  }
+  .cs-intro__close-icon {
+    width: 20px;
+    height: 20px;
+  }
+  // copy
+  // ----------------------------------------- //
+  .cs-intro__copy {
+    bottom: 18px;
+    left: 19px;
+    right: 19px;
+  }
+  .cs-intro__title {
+    font-size: 14px;
+    margin-bottom: 13px;
+    line-height: 1.5;
+  }
+  .cs-intro__sub-title {
+    font-size: 21px;
+    letter-spacing: 0.02em;
+    line-height: 1.35;
+  }
+  .cs-intro__img-wrapper {
+
+  }
+  .cs-intro__img {
+
+  }
+}

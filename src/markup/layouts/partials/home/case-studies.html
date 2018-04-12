@@ -1,0 +1,37 @@
+<section id="case-studies" class="case-studies js-site-section">
+  <div class="case-studies__container">
+    <h1 class="case-studies__title">{{ .Params.case_studies.title }}</h1>
+    <p class="case-studies__details">{{ .Params.case_studies.details }}</p>
+    <div class="case-studies__grid grid">
+      <div class="grid__content u-clearfix">
+        <div class="grid__sizer"></div>
+        {{ range $index, $caseStudy := where $.Site.RegularPages "Section" "case-studies" }}
+          <div
+            class="
+              grid-item
+              grid-item--{{ .Params.grid_layout }}
+              {{ if lt $index 3}} is-first {{ else }} is-hidden {{ end }}
+            "
+          >
+            <a href="{{ .Permalink }}" class="grid-item__link">
+              <div class="grid-item__copy">
+                <h2 class="grid-item__title">{{ .Title }} {{ partial "svgs/chevron-right.svg" (dict "class" "grid-item__title-arrow")}}</h2>
+                <div class="grid-item__detail-mask">
+                  <div class="grid-item__detail-content">
+                    <p class="grid-item__details">{{ .Params.call_to_action }}</p>
+                    <p class="grid-item__cta">View More {{ partial "svgs/chevron-right.svg" (dict "class" "grid-item__cta-arrow")}}</p>
+                  </div>
+                </div>
+              </div>
+              <img class="grid-item__img" src="{{ .Params.featured_image | relURL }}" alt="">
+            </a>
+          </div>
+        {{ end }}
+      </div>
+      <button class="grid__cta">
+        <span class="grid__cta-text">Load More</span>
+        {{ partial "svgs/chevron-down.svg" (dict "class" "grid__cta-arrow")}}
+      </button>
+    </div>
+  </div>
+</section>

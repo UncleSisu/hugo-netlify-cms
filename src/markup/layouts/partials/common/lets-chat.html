@@ -1,0 +1,8 @@
+<section class="lets-chat">
+  <div class="lets-chat__container">
+    <h1 class="lets-chat__title">{{ .Site.Params.contact.title }}</h1>
+    <p class="lets-chat__cta">
+      <a href="mailto:{{ .Site.Params.contact.email }}" class="lets-chat__cta-link">{{ .Site.Params.contact.call_to_action }} {{ partial "svgs/chevron-right.svg" (dict "class" "lets-chat__icon")}}</a>
+    </p>
+  </div>
+</section>

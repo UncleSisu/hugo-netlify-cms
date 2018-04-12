@@ -1,0 +1,8 @@
+<section class="cs-services">
+  <h1 class="cs-services__title">Services</h1>
+  <ol class="cs-services__list">
+    {{ range $service := .Params.services }}
+      <li class="cs-services__item">{{ $service.service }}</li>
+    {{ end }}
+  </ol>
+</section>

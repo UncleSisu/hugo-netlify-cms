@@ -1,0 +1,15 @@
+<section class="touts">
+  <div class="touts__container">
+    {{ range $tout := .Params.touts }}
+      <div class="touts__tout tout">
+        <div class="tout__img-wrapper">
+          <h2 class="tout__title">{{ $tout.title }}</h2>
+          <img src="{{ $tout.image | relURL }}" alt="" class="tout__img">
+        </div>
+        <div class="tout__details">
+          <p>{{ $tout.details | safeHTML }}</p>
+        </div>
+      </div>
+    {{ end }}
+  </div>
+</section>

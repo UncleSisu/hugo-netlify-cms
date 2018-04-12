@@ -1,0 +1,73 @@
+.cs-services {
+
+}
+.cs-services__title {
+  font-size: 54px;
+  text-transform: uppercase;
+  font-family: $bold;
+  letter-spacing: 0.03em;
+  margin-bottom: 39px;
+}
+.cs-services__list {
+  border-top: 1px solid #686868;
+  counter-reset: services-counter;
+}
+.cs-services__item {
+  position: relative;
+  font-size: 24px;
+  font-family: $bold;
+  border-bottom: 1px solid #686868;
+  padding: 20px 15px 20px 78px;
+  min-height: 145px;
+  line-height: 1.25;
+  display: flex;
+  align-items: center;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    content: counter(services-counter);
+    counter-increment: services-counter;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: $red;
+    font-size: 28px;
+    font-family: $medium;
+    color: #fff;
+    text-align: center;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 1111px) {
+  .cs-services {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: $mobileNav) {
+  .cs-services__title {
+    font-size: 27px;
+    margin-bottom: 19px;
+  }
+  .cs-services__list {
+
+  }
+  .cs-services__item {
+    font-size: 16px;
+    padding: 10px 15px 10px 58px;
+    min-height: 73px;
+    line-height: 1.4;
+
+    &:before {
+      left: 10px;
+      width: 25px;
+      height: 25px;
+      font-size: 14px;
+      padding-top: 3px;
+    }
+  }
+}

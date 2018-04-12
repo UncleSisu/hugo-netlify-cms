@@ -1,0 +1,24 @@
+<section class="leadership">
+  <div class="leadership__container">
+    <h1 class="leadership__title">{{ .Params.leadership.title }}</h1>
+    <div class="leadership__leaders">
+      {{ range .Params.leadership.leader }}
+        <div class="leadership__leader leader">
+          <a
+            href="#{{ urlize .name }}"
+            class="leader__link"
+          >
+            {{ with .image }}
+              <div class="leader__img-wrapper">
+                <img src="{{ . }}" alt="" class="leader__img">
+              </div>
+            {{ end }}
+            <h2 class="leader__title">{{ .name }}</h2>
+            <p class="leader__role">{{ .role }}</p>
+            <p class="leader__cta">View Bio {{ partial "svgs/chevron-right.svg" (dict "class" "leader__cta-arrow")}}</p>
+          </a>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

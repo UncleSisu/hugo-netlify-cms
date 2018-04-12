@@ -1,0 +1,184 @@
+.leadership {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 40px;
+}
+.leadership.is-open {
+  display: none;
+}
+  .leadership__container {
+    @include container;
+    padding-top: 144px;
+  }
+    .leadership__title {
+      @include section-title;
+      margin-bottom: 140px;
+    }
+      // leaders
+      // ----------------------------------------- //
+      .leadership__leaders {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: -20px;
+        margin-right: -20px;
+      }
+        // leader
+        // ----------------------------------------- //
+        .leadership__leader {
+          flex: 0 1 25%;
+          width: 25%;
+          max-width: 340px;
+          padding: 0 20px 50px;
+        }
+        .leader {
+          text-align: center;
+        }
+          .leader__link {
+            display: block;
+            color: $darkText;
+          }
+            // img
+            // ----------------------------------------- //
+            .leader__img-wrapper {
+              border-radius: 50%;
+              overflow: hidden;
+              font-size: 0;
+              line-height: 0;
+              max-width: 300px;
+              max-height: 300px;
+              margin: 0 auto 48px;
+            }
+              .leader__img {
+                width: 100%;
+                transition: all 0.5s $easeInOutQuad;
+              }
+            .leader__img-wrapper:hover {
+              .leader__img {
+                transform: scale(1.1);
+                opacity: 0.88;
+              }
+            }
+            // copy
+            // ----------------------------------------- //
+            .leader__title {
+              font-size: 24px;
+              text-transform: uppercase;
+              letter-spacing: 0.05em;
+              margin-bottom: 13px;
+              font-family: $bold;
+            }
+            .leader__role {
+              font-size: 20px;
+              margin-bottom: 32px;
+            }
+            .leader__cta {
+              font-family: $bold;
+              font-size: 12px;
+              transition: all 0.2s ease;
+            }
+              .leader__cta-arrow {
+                fill: $red;
+                margin-left: 7px;
+                width: 6px;
+                height: 9px;
+                position: relative;
+                top: 1px;
+                transition: all 0.2s ease;
+              }
+            .leader__cta:hover {
+              color: $darkRed;
+              .leader__cta-arrow {
+                fill: $darkRed;
+                transform: translateX(3px);
+              }
+            }
+
+// three across
+// ----------------------------------------- //
+@media (max-width: 970px) {
+  .leadership__leader {
+    flex-basis: 33.333%;
+    width: 33.333%;
+  }
+}
+
+
+// smaller text
+// ----------------------------------------- //
+@media (max-width: $mobileNav) {
+  // img
+  // ----------------------------------------- //
+  .leader__img-wrapper {
+    margin-bottom: 14px;
+  }
+  // copy
+  // ----------------------------------------- //
+  .leader__title {
+    font-size: 16px;
+    margin-bottom: 11px;
+  }
+  .leader__role {
+    font-size: 15px;
+    margin-bottom: 11px;
+  }
+  .leader__cta {
+    font-family: $bold;
+    font-size: 12px;
+  }
+    .leader__cta-arrow {
+      fill: $red;
+      margin-left: 7px;
+      width: 6px;
+      height: 9px;
+      position: relative;
+      top: 1px;
+    }
+}
+
+// single column
+// ----------------------------------------- //
+@media (max-width: 700px) {
+  .leadership {
+    margin-bottom: 0;
+  }
+  // leaders
+  // ----------------------------------------- //
+  .leadership__leaders {
+    display: block;
+    margin-left: 0;
+    margin-right: 0;
+  }
+    // leader
+    // ----------------------------------------- //
+    .leadership__leader {
+      width: 100%;
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      margin: 0 auto;
+    }
+    .leader__img-wrapper {
+      position: relative;
+      width: 53.5%;
+    }
+}
+
+// mobile styles
+// ----------------------------------------- //
+@media (max-width: $mobileNav) {
+  .leadership {
+    // margin-bottom: 0px;
+  }
+
+    .leadership__container {
+      @include container--sml;
+      padding-top: 44px;
+    }
+    // Intro
+    // ----------------------------------------- //
+    .leadership__title {
+      @include section-title--sml;
+      margin-bottom: 45px;
+      }
+}

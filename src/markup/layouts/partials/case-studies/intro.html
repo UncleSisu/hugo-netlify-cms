@@ -1,0 +1,9 @@
+<section class="cs-intro" style="background-image:url({{ .Params.featured_image | relURL }});">
+  <div class="cs-intro__container">
+    <a class="cs-intro__close-link" href="{{ "index.html" | relURL }}">{{ partial "svgs/close.svg" (dict "class" "cs-intro__close-icon")}}</a>
+    <div class="cs-intro__copy">
+      <h1 class="cs-intro__title">{{ .Title }}</h1>
+      <p class="cs-intro__sub-title">{{ .Description }}</p>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,63 @@
+// header
+// ------------------------------------------------------------------------------------------------- //
+.site-header {
+  display: none;
+}
+  .site-header__container {
+    @include container;
+  }
+    // logo
+    // ----------------------------------------- //
+    .site-header__logo {
+
+    }
+      .site-header__logo-icon {
+
+      }
+
+    // menu btn
+    // ----------------------------------------- //
+    .menu-btn {
+
+    }
+      .menu-btn__icon {
+
+      }
+
+@media (max-width: $mobileNav) {
+  .site-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: block;
+    height: 48px;
+    background-color: #fff;
+    z-index: 100;
+    padding-top: 9px;
+  }
+    .site-header__container {
+      @include container--sml;
+      padding-top: 0;
+      display: flex;
+      justify-content: space-between;
+    }
+      // logo
+      // ----------------------------------------- //
+      .site-header__logo {
+
+      }
+        .site-header__logo-icon {
+          width: 83.5px;
+          height: 27px;
+        }
+
+      // menu btn
+      // ----------------------------------------- //
+      .menu-btn {
+
+      }
+        .menu-btn__icon {
+          fill: $red;
+        }
+}

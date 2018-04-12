@@ -1,0 +1,11 @@
+{{ partial "common/start-page" . }}
+{{ partial "common/internal-nav" . }}
+<div class="site-container">
+  {{ partial "common/site-header" . }}
+  {{ with .Content }}{{.}}{{ end }}
+  {{ partial "common/lets-chat" . }}
+  {{ partial "common/contact" . }}
+  {{ partial "common/site-footer" . }}
+  <div class="site-container__mask"></div>
+</div>
+{{ partial "common/end-page" . }}

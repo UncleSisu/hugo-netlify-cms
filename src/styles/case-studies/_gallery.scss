@@ -1,0 +1,218 @@
+.cs-gallery {
+
+}
+.cs-gallery__container {
+  position: relative;
+  overflow: hidden;
+}
+// controls
+// ----------------------------------------- //
+.cs-gallery__controls {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  background-color: rgba(225, 225, 225, 0.3);
+  height: 101px;
+  width: 270px;
+  color: #fff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+// buttons
+// ----------------------------------------- //
+.cs-gallery__control-btn--left,
+.cs-gallery__control-btn--right {
+  padding: 24px;
+}
+.cs-gallery__control-icon--left,
+.cs-gallery__control-icon--right {
+  fill: #fff;
+  width: 14px;
+  height: 20px;
+  transition: transform 0.2s ease;
+}
+// hover
+.cs-gallery__control-btn--left:hover {
+  .cs-gallery__control-icon--left {
+    opacity: 0.8;
+  }
+}
+.cs-gallery__control-btn--right:hover {
+  .cs-gallery__control-icon--right {
+    opacity: 0.8;
+  }
+}
+
+// count
+// ----------------------------------------- //
+.cs-gallery__count {
+  font-size: 24px;
+  font-family: $medium;
+  text-transform: uppercase;
+}
+.cs-gallery__current-slide {
+
+}
+.cs-gallery__total-slides {
+
+}
+
+// slider
+// ----------------------------------------- //
+.cs-gallery__slides-container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: nowrap;
+  transform: translateX(0);
+  transition: all 0.4s $easeInOutQuad;
+}
+.cs-gallery__slide {
+  flex: 0 0 100%;
+  width: 100%;
+}
+// slide
+// ----------------------------------------- //
+.cs-slide {
+  position: relative;
+  font-size: 0;
+  line-height: 0;
+  overflow: hidden;
+}
+// img
+// ----------------------------------------- //
+.cs-slide__img-wrapper {
+  position: relative;
+  padding-top: 62.343966713%;
+  z-index: 1;
+  background-color: #282625;
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 312px;
+    z-index: 2;
+    background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.65) 100%,rgba(0,0,0,0.65) 101%);
+  }
+}
+.cs-slide__img {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+// description
+// ----------------------------------------- //
+.cs-slide__description {
+  position: absolute;
+  z-index: 5;
+  font-size: 24px;
+  line-height: 1.5;
+  color: #fff;
+  font-family: $medium;
+  bottom: 27px;
+  left: 60px;
+  right: 313px;
+}
+
+// max height for large screens. Otherwise gallery image take are too tall.
+@media (min-width: 1400px) {
+  .cs-slide__img-wrapper {
+    padding-top: 0;
+    height: 1000px;
+  }
+}
+
+@media (max-width: $mobileNav) {
+  .cs-gallery {
+
+  }
+  .cs-gallery__container {
+
+  }
+  // controls
+  // ----------------------------------------- //
+  .cs-gallery__controls {
+    padding-top: 62.343966713%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 375px;
+    background: none;
+  }
+  // buttons
+  // ----------------------------------------- //
+  .cs-gallery__control-btn--left,
+  .cs-gallery__control-btn--right {
+    position: absolute;
+    bottom: 10px;
+    padding: 17px;
+  }
+  .cs-gallery__control-btn--left {
+    left: 0px;
+  }
+  .cs-gallery__control-btn--right {
+    right: 0px;
+  }
+  .cs-gallery__control-icon--left,
+  .cs-gallery__control-icon--right {
+
+  }
+  // count
+  // ----------------------------------------- //
+  .cs-gallery__count {
+    position: absolute;
+    bottom: 29px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    font-family: $bold;
+  }
+  .cs-gallery__current-slide {
+
+  }
+  .cs-gallery__total-slides {
+
+  }
+
+  // slider
+  // ----------------------------------------- //
+  .cs-gallery__slides-container {
+
+  }
+  .cs-gallery__slide {
+
+  }
+  // slide
+  // ----------------------------------------- //
+  .cs-slide {
+  }
+  // img
+  // ----------------------------------------- //
+  .cs-slide__img-wrapper {
+    height: 375px;
+    &:after {
+      height: 245px;
+    }
+  }
+  .cs-slide__img {
+
+  }
+  // description
+  // ----------------------------------------- //
+  .cs-slide__description {
+    position: static;
+    background: $bg;
+    font-size: 12px;
+    color: $darkText;
+    padding: 20px 20px;
+    text-align: center;
+  }
+}

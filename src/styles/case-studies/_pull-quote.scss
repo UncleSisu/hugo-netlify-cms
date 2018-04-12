@@ -1,0 +1,73 @@
+.pull-quote {
+  background-color: #fff;
+}
+.pull-quote__container {
+  max-width: 1287px;
+  padding: 182px 160px 190px;
+  margin: 0 auto;
+  text-align: center;
+}
+.pull-quote__block {
+  font-size: 28px;
+  line-height: 1.73;
+  letter-spacing: 0.02em;
+
+  p {
+    font-family: $medium;
+  }
+  strong {
+    color: $red;
+    font-family: $bold;
+  }
+  footer {
+
+  }
+  cite {
+
+  }
+}
+.pull-quote__source {
+  font-family: $bold;
+  color: $red;
+  margin-top: 55px;
+  margin-bottom: -7px;
+}
+.pull-quote__source-title {
+  font-size: 24px;
+}
+
+
+@media (max-width: $mobileNav) {
+  .pull-quote {
+
+  }
+  .pull-quote__container {
+    padding: 102px 20px 103px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  .pull-quote__block {
+    font-size: 16px;
+    line-height: 1.5;
+
+    p {
+
+    }
+    strong {
+
+    }
+    footer {
+
+    }
+    cite {
+
+    }
+  }
+  .pull-quote__source {
+    margin-top: 38px;
+    margin-bottom: 0;
+  }
+  .pull-quote__source-title {
+    font-size: 16px;
+  }
+}

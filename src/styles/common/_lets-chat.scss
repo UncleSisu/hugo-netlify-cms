@@ -1,0 +1,60 @@
+.lets-chat {
+
+}
+.lets-chat__container {
+  @include container;
+  padding-top: 60px;
+  text-align: center;
+  padding-bottom: 60px;
+}
+.lets-chat__title {
+  font-size: 68px;
+  color: $red;
+  text-transform: uppercase;
+  font-family: $bold;
+  letter-spacing: 0.03em;
+  margin-bottom: 16px;
+}
+.lets-chat__cta {
+}
+.lets-chat__cta-link {
+  font-size: 24px;
+  color: $darkText;
+  font-family: $medium;
+  transition: all 0.2s ease;
+}
+.lets-chat__icon {
+  fill: $red;
+  width: 9px;
+  height: 13px;
+  margin-left: 4px;
+  transition: all 0.2s ease;
+}
+// hover
+.lets-chat__cta-link:hover {
+  color: $darkRed;
+  .lets-chat__icon {
+    transform: translateX(4px);
+  }
+}
+
+
+@media (max-width: $mobileNav) {
+  .lets-chat__container {
+    @include container--sml;
+    padding-top: 44px;
+    padding-bottom: 44px;
+  }
+  .lets-chat__title {
+    font-size: 34px;
+    margin-bottom: 5px;
+  }
+  .lets-chat__cta-link {
+    font-size: 12px;
+  }
+  .lets-chat__icon {
+    width: 4px;
+    height: 6px;
+    margin-left: 3px;
+  }
+}

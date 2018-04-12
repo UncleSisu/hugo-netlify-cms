@@ -1,0 +1,25 @@
+<section id="hero" class="hero js-site-section">
+  <div class="hero__container">
+    <a class="hero__logo" href="index.html">
+      {{ partial "svgs/logo.svg" (dict "class" "hero__logo-icon")}}
+    </a>
+    <div class="hero__copy-container">
+      <h1 class="hero__title">{{ .Params.hero.title | safeHTML }}</h1>
+      <p class="hero__details">{{ .Params.hero.details }}</p>
+    </div>
+    <button class="scroll-down-btn">
+      <span class="scroll-down-btn__text">Scroll to explore</span>
+      {{ partial "svgs/chevron-down.svg" (dict "class" "scroll-down-btn__chevron")}}
+    </button>
+  </div>
+</section>
+<style>
+  .hero {
+    background-image: url({{ .Params.hero.image_lrg | relURL }});
+  }
+  @media (max-width: 870px) {
+    .hero {
+      background-image: url({{ .Params.hero.image_sml | relURL }});
+    }
+  }
+</style>

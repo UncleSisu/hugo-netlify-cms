@@ -1,0 +1,24 @@
+.cs-main {
+  background-color: #fff;
+  overflow: hidden;
+}
+.cs-main__container {
+  @include container;
+  display: flex;
+  padding-top: 96px;
+  padding-bottom: 41px;
+}
+
+@media (max-width: 1111px) {
+  .cs-main__container {
+    display: block;
+  }
+}
+
+@media (max-width: $mobileNav) {
+  .cs-main__container {
+    @include container--sml;
+    padding-top: 48px;
+    padding-bottom: 0;
+  }
+}

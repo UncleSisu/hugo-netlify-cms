@@ -1,0 +1,20 @@
+<section id="services" class="services js-site-section">
+  <div class="services__container">
+    <h1 class="services__title">{{ .Params.services.title }}</h1>
+    <p class="services__details">{{ .Params.services.details }}</p>
+    <div class="services__list">
+      {{ range $service := .Params.services.services }}
+        <div class="services__list-item">
+          <div class="service">
+            <div class="service__icon-wrapper">
+              {{ $icon := printf "svgs/%s.svg" .icon }}
+              {{ partial $icon (dict "class" "service__icon service__icon--handshake")}}
+            </div>
+            <h2 class="service__title">{{ .title }}</h2>
+            <p class="service__details">{{ .details }}</p>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>

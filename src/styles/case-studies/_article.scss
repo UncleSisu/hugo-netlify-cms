@@ -1,0 +1,38 @@
+.cs-article {
+  flex: 1 1;
+  padding-right: 58px;
+  h1 {
+    font-size: 54px;
+    text-transform: uppercase;
+    font-family: $bold;
+    letter-spacing: 0.03em;
+    margin-bottom: 30px;
+  }
+  p {
+    font-size: 24px;
+    line-height: 1.85;
+    margin-bottom: 42px;
+  }
+}
+
+@media (max-width: 1111px) {
+  .cs-article {
+    padding-right: 0;
+    margin-bottom: 70px;
+  }
+}
+
+@media (max-width: $mobileNav) {
+  .cs-article {
+    margin-bottom: 40px;
+    h1 {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.4;
+      margin-bottom: 22px;
+    }
+  }
+}

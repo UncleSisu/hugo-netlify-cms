@@ -1,0 +1,29 @@
+<section class="cs-gallery">
+  <div class="cs-gallery__container">
+    <div class="cs-gallery__controls">
+      <button class="cs-gallery__control-btn--left js-prev-btn">
+        {{ partial "svgs/chevron-left.svg" (dict "class" "cs-gallery__control-icon--left")}}
+      </button>
+      <div class="cs-gallery__count">
+        <span class="cs-gallery__current-number"></span>
+        of
+        <span class="cs-gallery__total-number"></span>
+      </div>
+      <button class="cs-gallery__control-btn--right js-next-btn">
+        {{ partial "svgs/chevron-right.svg" (dict "class" "cs-gallery__control-icon--right")}}
+      </button>
+    </div>
+    <div class="cs-gallery__slides-container">
+      {{ range $slide := .Params.gallery }}
+        <div class="cs-gallery__slide cs-slide">
+          <p class="cs-slide__img-wrapper">
+            <img src="{{ $slide.image | relURL }}" alt="" class="cs-slide__img">
+          </p>
+          {{ with $slide.description }}
+          <p class="cs-slide__description">{{ . }}</p>
+          {{ end }}
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
