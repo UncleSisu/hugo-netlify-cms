@@ -4,9 +4,9 @@
 #----------------------------------------------------#
 backend:
   name: github
-  repo: stevenwaller/netlify # Path to your Github repository
+  repo: UncleSisu/hugo-netlify-cms # Path to your Github repository
   branch: master # Branch to update (master by default)
-  site_domain: http://localhost:3001 # Sets the site_id query param sent to the API endpoint
+  site_domain: http://localhost:3000 # Sets the site_id query param sent to the API endpoint
   base_url: http://localhost:3000 # OAuth client URL
 
 # Editorial Workflow

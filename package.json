@@ -7,6 +7,7 @@
     "hugo": "gulp hugo",
     "build": "rm -rf ./dist && cross-env NODE_ENV=production gulp build",
     "build-preview": "rm -rf ./dist && cross-env NODE_ENV=production gulp build-preview",
+    "start": "gulp hugo-preview && cross-env NODE_ENV=production node server/index.js",
     "dev": "rm -rf ./dist && gulp dev",
     "lint": "eslint src"
   },
@@ -17,13 +18,18 @@
     "last 2 versions"
   ],
   "dependencies": {
+    "dotenv": "^5.0.1",
+    "express": "^4.16.3",
     "isotope-layout": "^3.0.4",
     "isotope-packery": "^2.0.0",
     "jquery": "^3.2.1",
     "jquery.easing": "^1.4.1",
     "lodash": "^4.17.4",
     "modernizr": "^3.5.0",
-    "postal": "^2.0.5"
+    "morgan": "^1.9.0",
+    "postal": "^2.0.5",
+    "randomstring": "^1.1.5",
+    "simple-oauth2": "^1.5.2"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
